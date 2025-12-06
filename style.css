@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;700&display=swap');
+
+:root {
+    --color-ocean: #2c98a1;
+    --color-sand: #f9eac3;
+    --color-tropical-pink: #d94870;
+    --color-tropical-green: #38b46a;
+    --font-title: 'Pacifico', cursive;
+    --font-text: 'Quicksand', sans-serif;
+}
+
+body {
+    font-family: var(--font-text);
+    background: linear-gradient(to bottom, var(--color-ocean) 0%, var(--color-ocean) 50%, var(--color-sand) 50%, var(--color-sand) 100%);
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    /*overflow: hidden; desabilitar a barra de rolagem*/
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 30px 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+    z-index: 10; 
+}
+
+h1 {
+    font-family: var(--font-title);
+    color: var(--color-tropical-pink);
+    font-size: 3em;
+    margin-bottom: 5px;
+    text-shadow: 2px 2px 0 var(--color-sand);
+}
+
+h2 {
+    font-family: var(--font-title);
+    color: var(--color-ocean);
+    font-size: 2em;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.message p {
+    font-size: 1.1em;
+    color: #333;
+    line-height: 1.6;
+}
+
+.details {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    border-left: 5px solid var(--color-tropical-green);
+}
+
+.details p {
+    margin: 10px 0;
+    font-size: 1.2em;
+    font-weight: 700;
+    color: #555;
+}
+
+.details strong {
+    color: var(--color-tropical-pink);
+}
+
+/* --- Estilos para o Formulário de RSVP --- */
+
+.rsvp-form-container {
+    margin-top: 30px;
+    background-color: #f7f7f7;
+    border: 2px dashed var(--color-tropical-pink); /* Borda estilizada */
+}
+
+.rsvp-form-container h3 {
+    font-family: var(--font-title);
+    color: var(--color-ocean);
+    margin-top: 0;
+    font-size: 1.8em;
+}
+
+#rsvp-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.form-group label {
+    font-weight: 700;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    border-color: var(--color-tropical-green);
+    outline: none;
+}
+
+.rsvp-button {
+    background-color: var(--color-tropical-pink);
+    color: white;
+    font-weight: 700;
+    font-size: 1.1em;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 4px 0 var(--color-ocean); /* Sombra para efeito 3D sutil */
+    transition: background-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+.rsvp-button:hover {
+    background-color: #f06a92; /* Tom mais claro ao passar o mouse */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 var(--color-ocean);
+}
+
+.rsvp-button:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 var(--color-ocean);
+}
+
+.form-message {
+    font-weight: 700;
+    color: var(--color-tropical-green); /* Mensagem de sucesso em verde */
+    min-height: 40px; /* Garante espaço para uma ou duas linhas de texto */
+    margin-top: 10px; /* Adiciona espaço acima da mensagem */
+    text-align: center;
+}
+
+/* --- Estilo e Posicionamento das Fotos (Fundo) --- */
+
+.photo-decoration {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    opacity: 0.8;
+    filter: grayscale(10%);
+}
+
+/* Foto 1: Helena de Moana (canto superior esquerdo) */
+#photo1 {
+    top: 50px;
+    left: 10px;
+    background-image: url("fotos/foto1.jpeg");
+    transform: rotate(-15deg);
+}
+
+/* Foto 2: Helena na praia de roxo (canto superior direito) */
+#photo2 {
+    top: 100px;
+    right: 80px;
+    background-image: url("fotos/foto2.jpeg");
+    width: 250px;
+    height: 250px;
+    opacity: 0.7;
+    transform: rotate(10deg);
+}
+
+/* Foto 3: Helena de listras (canto inferior esquerdo) */
+#photo3 {
+    bottom: 80px;
+    left: 30px;
+    background-image: url("fotos/foto3.jpeg");
+    width: 180px;
+    height: 180px;
+    transform: rotate(5deg);
+}
+
+/* Foto 4: Helena de flor no cabelo (canto inferior direito) */
+#photo4 {
+    bottom: 50px;
+    right: 0px;
+    background-image: url("fotos/foto4.jpeg");
+    width: 220px;
+    height: 220px;
+    transform: rotate(-8deg);
+}
+
+/* Foto 5: Helena com chapéu () */
+#photo5 {
+    top: 38%; /* Centraliza verticalmente */
+    left: 10px; /* Posiciona um pouco para fora da tela no lado esquerdo */
+    width: 170px;
+    height: 170px;
+    background-image: url("fotos/foto5.jpeg");
+    transform: rotate(18deg);
+    opacity: 0.75;
+    animation: float 7s ease-in-out infinite reverse; /* Usa a animação, mas inverte para variar */
+}
+
+
+
+/* Opcional: Efeito de animação para as fotos flutuarem */
+@keyframes float {
+    0% { transform: translate(0, 0px); }
+    50% { transform: translate(0, 15px); }
+    100% { transform: translate(0, -0px); }
+}
+
+#photo1, #photo3 { animation: float 6s ease-in-out infinite; }
+#photo2, #photo4 { animation: float 8s ease-in-out infinite; }
+
+/* Media query para telas menores (como celular) */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        max-width: 90%;
+    }
+    h1 {
+        font-size: 2.5em;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+    .photo-decoration {
+        width: 120px;
+        height: 120px;
+        opacity: 0.6;
+    }
+    #photo1 { top: 30px; left: -30px; }
+    #photo2 { top: 60px; right: -50px; }
+    #photo3 { bottom: 50px; left: -20px; }
+    #photo4 { bottom: 30px; right: -30px; }
+}
