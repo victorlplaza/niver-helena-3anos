@@ -1,17 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;700&display=swap');
 
 :root {
-    --color-ocean: #2c98a1;
-    --color-sand: #f9eac3;
-    --color-tropical-pink: #d94870;
-    --color-tropical-green: #38b46a;
-    --font-title: 'Pacifico', cursive;
-    --font-text: 'Quicksand', sans-serif;
+ --color-ocean: #2c98a1;
+ --color-sand: #f9eac3;
+ --color-tropical-pink: #d94870;
+ --color-tropical-green: #38b46a;
+ --font-title: 'Pacifico', cursive;
+ --font-text: 'Quicksand', sans-serif;
 }
 
 body {
-    font-family: var(--font-text);
-    background: linear-gradient(to bottom, var(--color-ocean) 0%, var(--color-ocean) 50%, var(--color-sand) 50%, var(--color-sand) 100%);
+ font-family: var(--font-text);
+ 
+    /* --- 1. MUDANÇA DE FUNDO: Usando Fundo1.png com imagem fixa --- */
+    background-image: url("fotos/Fundo1.png");
+    background-size: cover; /* Garante que a imagem cubra todo o fundo */
+    background-attachment: fixed; /* Fixa a imagem no viewport */
+    background-position: center center; /* Centraliza a imagem */
+    /* REMOVIDO: background: linear-gradient(...) */
+    
     margin: 0;
     padding: 20px;
     text-align: center;
@@ -19,18 +26,19 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    /* 2. AJUSTE: Alinha o conteúdo ao topo para rolagem limpa */
+    justify-content: flex-start; 
     position: relative;
-    /*overflow: hidden; desabilitar a barra de rolagem*/
 }
 
 .container {
-    background-color: rgba(255, 255, 255, 0.95);
+    /*background-color: rgba(255, 255, 255, 0.95);*/
     padding: 30px 40px;
     border-radius: 20px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     max-width: 600px;
-    z-index: 10; 
+    z-index: 10;
+    margin-top: 20px; /* Garante espaço no topo em desktops */
 }
 
 h1 {
@@ -51,14 +59,19 @@ h2 {
 
 .message p {
     font-size: 1.1em;
-    color: #333;
+    color: #1C4550;
     line-height: 1.6;
+    text-shadow: 
+        1px 1px 0 #fff,  
+        -1px -1px 0 #fff, 
+        1px -1px 0 #fff, 
+        -1px 1px 0 #fff;  
 }
 
 .details {
     margin-top: 30px;
     padding: 20px;
-    background-color: #f7f7f7;
+    /*background-color: #f7f7f7;*/
     border-radius: 10px;
     border-left: 5px solid var(--color-tropical-green);
 }
@@ -68,6 +81,7 @@ h2 {
     font-size: 1.2em;
     font-weight: 700;
     color: #555;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
 }
 
 .details strong {
@@ -80,6 +94,7 @@ h2 {
     margin-top: 30px;
     background-color: #f7f7f7;
     border: 2px dashed var(--color-tropical-pink); /* Borda estilizada */
+    margin-bottom: 40px; /* Adiciona margem inferior para espaço após o formulário */
 }
 
 .rsvp-form-container h3 {
@@ -123,110 +138,100 @@ h2 {
 }
 
 .rsvp-button {
-    background-color: var(--color-tropical-pink);
-    color: white;
-    font-weight: 700;
-    font-size: 1.1em;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    box-shadow: 0 4px 0 var(--color-ocean); /* Sombra para efeito 3D sutil */
-    transition: background-color 0.2s, box-shadow 0.2s, transform 0.2s;
+ background-color: var(--color-tropical-pink);
+ color: white;
+ font-weight: 700;
+ font-size: 1.1em;
+ padding: 12px 20px;
+ border: none;
+ border-radius: 25px;
+ cursor: pointer;
+ box-shadow: 0 4px 0 var(--color-ocean); /* Sombra para efeito 3D sutil */
+ transition: background-color 0.2s, box-shadow 0.2s, transform 0.2s;
 }
 
 .rsvp-button:hover {
-    background-color: #f06a92; /* Tom mais claro ao passar o mouse */
-    transform: translateY(-2px);
-    box-shadow: 0 6px 0 var(--color-ocean);
+ background-color: #f06a92; /* Tom mais claro ao passar o mouse */
+ transform: translateY(-2px);
+ box-shadow: 0 6px 0 var(--color-ocean);
 }
 
 .rsvp-button:active {
-    transform: translateY(2px);
-    box-shadow: 0 2px 0 var(--color-ocean);
+ transform: translateY(2px);
+ box-shadow: 0 2px 0 var(--color-ocean);
 }
 
 .form-message {
-    font-weight: 700;
-    color: var(--color-tropical-green); /* Mensagem de sucesso em verde */
-    min-height: 40px; /* Garante espaço para uma ou duas linhas de texto */
-    margin-top: 10px; /* Adiciona espaço acima da mensagem */
-    text-align: center;
+ font-weight: 700;
+ color: var(--color-tropical-green); /* Mensagem de sucesso em verde */
+ min-height: 40px; /* Garante espaço para uma ou duas linhas de texto */
+ margin-top: 10px; /* Adiciona espaço acima da mensagem */
+ text-align: center;
 }
 
 /* --- Estilo e Posicionamento das Fotos (Fundo) --- */
 
 .photo-decoration {
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    background-size: cover;
-    background-position: top center;
-    background-repeat: no-repeat;
-    border-radius: 50%;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    opacity: 0.8;
-    filter: grayscale(10%);
+ /* MUDANÇA CRÍTICA: Fixa a posição no viewport, impedindo a "deformação" */
+ position: fixed; 
+ width: 200px;
+ height: 200px;
+ background-size: cover;
+ background-position: top center;
+ background-repeat: no-repeat;
+ border-radius: 50%;
+ box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+ opacity: 0.8;
+ filter: grayscale(10%);
 }
 
 /* Foto 1: Helena de Moana (canto superior esquerdo) */
 #photo1 {
-    top: 50px;
-    left: 10px;
-    background-image: url("fotos/foto1.jpeg");
-    transform: rotate(-15deg);
+ top: 100px;
+ left: 80px;
+ background-image: url("fotos/foto5.jpeg");
+ width: 250px;
+ height: 250px;
+ opacity: 0.7;
+ transform: rotate(-15deg);
 }
 
 /* Foto 2: Helena na praia de roxo (canto superior direito) */
 #photo2 {
-    top: 100px;
-    right: 80px;
-    background-image: url("fotos/foto2.jpeg");
-    width: 250px;
-    height: 250px;
-    opacity: 0.7;
-    transform: rotate(10deg);
+ top: 100px;
+ right: 80px;
+ background-image: url("fotos/foto2.jpeg");
+ width: 250px;
+ height: 250px;
+ opacity: 0.7;
+ transform: rotate(10deg);
 }
 
 /* Foto 3: Helena de listras (canto inferior esquerdo) */
 #photo3 {
-    bottom: 80px;
-    left: 30px;
-    background-image: url("fotos/foto3.jpeg");
-    width: 180px;
-    height: 180px;
-    transform: rotate(5deg);
+ bottom: 80px;
+ left: 30px;
+ background-image: url("fotos/foto3.jpeg");
+ width: 220px;
+ height: 220px;
+ transform: rotate(5deg);
 }
 
 /* Foto 4: Helena de flor no cabelo (canto inferior direito) */
 #photo4 {
-    bottom: 50px;
-    right: 0px;
-    background-image: url("fotos/foto4.jpeg");
-    width: 220px;
-    height: 220px;
-    transform: rotate(-8deg);
+ bottom: 50px;
+ right: 0px;
+ background-image: url("fotos/foto4.jpeg");
+ width: 220px;
+ height: 220px;
+ transform: rotate(-8deg);
 }
-
-/* Foto 5: Helena com chapéu () */
-#photo5 {
-    top: 38%; /* Centraliza verticalmente */
-    left: 10px; /* Posiciona um pouco para fora da tela no lado esquerdo */
-    width: 170px;
-    height: 170px;
-    background-image: url("fotos/foto5.jpeg");
-    transform: rotate(18deg);
-    opacity: 0.75;
-    animation: float 7s ease-in-out infinite reverse; /* Usa a animação, mas inverte para variar */
-}
-
-
 
 /* Opcional: Efeito de animação para as fotos flutuarem */
 @keyframes float {
-    0% { transform: translate(0, 0px); }
-    50% { transform: translate(0, 15px); }
-    100% { transform: translate(0, -0px); }
+ 0% { transform: translate(0, 0px); }
+ 50% { transform: translate(0, 15px); }
+ 100% { transform: translate(0, -0px); }
 }
 
 #photo1, #photo3 { animation: float 6s ease-in-out infinite; }
@@ -234,23 +239,25 @@ h2 {
 
 /* Media query para telas menores (como celular) */
 @media (max-width: 768px) {
-    .container {
-        padding: 20px;
-        max-width: 90%;
-    }
-    h1 {
-        font-size: 2.5em;
-    }
-    h2 {
-        font-size: 1.5em;
-    }
-    .photo-decoration {
-        width: 120px;
-        height: 120px;
-        opacity: 0.6;
-    }
-    #photo1 { top: 30px; left: -30px; }
-    #photo2 { top: 60px; right: -50px; }
-    #photo3 { bottom: 50px; left: -20px; }
-    #photo4 { bottom: 30px; right: -30px; }
+ .container {
+  padding: 20px;
+  max-width: 90%;
+ }
+ h1 {
+  font-size: 2.5em;
+ }
+ h2 {
+  font-size: 1.5em;
+ }
+    /* Ajuste para que as fotos fixas não atrapalhem em telas muito pequenas */
+ .photo-decoration {
+  width: 100px; /* Reduzimos um pouco mais */
+  height: 100px;
+  opacity: 0.5;
+ }
+ #photo1 { top: 30px; left: -50px; }
+ #photo2 { top: 60px; right: -70px; }
+ #photo3 { bottom: 50px; left: -40px; }
+ #photo4 { bottom: 30px; right: -50px; }
+    #photo5 { left: -70px; }
 }
