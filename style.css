@@ -249,15 +249,9 @@ h2 {
  h2 {
   font-size: 1.5em;
  }
-    /* Ajuste para que as fotos fixas não atrapalhem em telas muito pequenas */
+
  .photo-decoration {
-  width: 100px; /* Reduzimos um pouco mais */
-  height: 100px;
-  opacity: 0.5;
- }
- #photo1 { top: 30px; left: -50px; }
- #photo2 { top: 60px; right: -70px; }
- #photo3 { bottom: 50px; left: -40px; }
- #photo4 { bottom: 30px; right: -50px; }
-    #photo5 { left: -70px; }
+    display: none; 
+}
+ 
 }
