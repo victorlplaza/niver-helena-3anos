@@ -1,45 +1,55 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;700&display=swap');
 
 :root {
- --color-ocean: #2c98a1;
- --color-sand: #f9eac3;
- --color-tropical-pink: #d94870;
- --color-tropical-green: #38b46a;
- --font-title: 'Pacifico', cursive;
- --font-text: 'Quicksand', sans-serif;
+    --color-ocean: #2c98a1;
+    --color-sand: #f9eac3;
+    --color-tropical-pink: #d94870;
+    --color-tropical-green: #38b46a;
+    --font-title: 'Pacifico', cursive;
+    --font-text: 'Quicksand', sans-serif;
 }
 
+/* =========================================================
+   BASE / DESKTOP (EXATAMENTE COMO SEU ORIGINAL)
+   ========================================================= */
+
 body {
- font-family: var(--font-text);
- 
-    /* --- 1. MUDANÇA DE FUNDO: Usando Fundo1.png com imagem fixa --- */
+    font-family: var(--font-text);
+
     background-image: url("fotos/Fundo1.png");
-    background-size: cover; /* Garante que a imagem cubra todo o fundo */
-    background-attachment: fixed; /* Fixa a imagem no viewport */
-    background-position: center center; /* Centraliza a imagem */
-    /* REMOVIDO: background: linear-gradient(...) */
-    
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+
     margin: 0;
     padding: 20px;
     text-align: center;
     min-height: 100vh;
+
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* 2. AJUSTE: Alinha o conteúdo ao topo para rolagem limpa */
-    justify-content: flex-start; 
+    justify-content: flex-start;
+
     position: relative;
 }
 
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
 .container {
-    /*background-color: rgba(255, 255, 255, 0.95);*/
     padding: 30px 40px;
     border-radius: 20px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     max-width: 600px;
     z-index: 10;
-    margin-top: 20px; /* Garante espaço no topo em desktops */
+    margin-top: 20px;
 }
+
+/* =========================================================
+   TÍTULOS
+   ========================================================= */
 
 h1 {
     font-family: var(--font-title);
@@ -57,21 +67,28 @@ h2 {
     margin-bottom: 20px;
 }
 
+/* =========================================================
+   TEXTO
+   ========================================================= */
+
 .message p {
     font-size: 1.1em;
     color: #1C4550;
     line-height: 1.6;
-    text-shadow: 
-        1px 1px 0 #fff,  
-        -1px -1px 0 #fff, 
-        1px -1px 0 #fff, 
-        -1px 1px 0 #fff;  
+    text-shadow:
+        1px 1px 0 #fff,
+        -1px -1px 0 #fff,
+        1px -1px 0 #fff,
+        -1px 1px 0 #fff;
 }
+
+/* =========================================================
+   DETALHES
+   ========================================================= */
 
 .details {
     margin-top: 30px;
     padding: 20px;
-    /*background-color: #f7f7f7;*/
     border-radius: 10px;
     border-left: 5px solid var(--color-tropical-green);
 }
@@ -88,13 +105,15 @@ h2 {
     color: var(--color-tropical-pink);
 }
 
-/* --- Estilos para o Formulário de RSVP --- */
+/* =========================================================
+   FORMULÁRIO RSVP
+   ========================================================= */
 
 .rsvp-form-container {
     margin-top: 30px;
     background-color: #f7f7f7;
-    border: 2px dashed var(--color-tropical-pink); /* Borda estilizada */
-    margin-bottom: 40px; /* Adiciona margem inferior para espaço após o formulário */
+    border: 2px dashed var(--color-tropical-pink);
+    margin-bottom: 40px;
 }
 
 .rsvp-form-container h3 {
@@ -138,120 +157,210 @@ h2 {
 }
 
 .rsvp-button {
- background-color: var(--color-tropical-pink);
- color: white;
- font-weight: 700;
- font-size: 1.1em;
- padding: 12px 20px;
- border: none;
- border-radius: 25px;
- cursor: pointer;
- box-shadow: 0 4px 0 var(--color-ocean); /* Sombra para efeito 3D sutil */
- transition: background-color 0.2s, box-shadow 0.2s, transform 0.2s;
+    background-color: var(--color-tropical-pink);
+    color: white;
+    font-weight: 700;
+    font-size: 1.1em;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 4px 0 var(--color-ocean);
+    transition: background-color 0.2s, box-shadow 0.2s, transform 0.2s;
 }
 
 .rsvp-button:hover {
- background-color: #f06a92; /* Tom mais claro ao passar o mouse */
- transform: translateY(-2px);
- box-shadow: 0 6px 0 var(--color-ocean);
+    background-color: #f06a92;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 var(--color-ocean);
 }
 
 .rsvp-button:active {
- transform: translateY(2px);
- box-shadow: 0 2px 0 var(--color-ocean);
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 var(--color-ocean);
 }
 
 .form-message {
- font-weight: 700;
- color: var(--color-tropical-green); /* Mensagem de sucesso em verde */
- min-height: 40px; /* Garante espaço para uma ou duas linhas de texto */
- margin-top: 10px; /* Adiciona espaço acima da mensagem */
- text-align: center;
+    font-weight: 700;
+    color: var(--color-tropical-green);
+    min-height: 40px;
+    margin-top: 10px;
+    text-align: center;
 }
 
-/* --- Estilo e Posicionamento das Fotos (Fundo) --- */
+/* =========================================================
+   FOTOS DECORATIVAS (DESKTOP)
+   ========================================================= */
 
 .photo-decoration {
- /* MUDANÇA CRÍTICA: Fixa a posição no viewport, impedindo a "deformação" */
- position: fixed; 
- width: 200px;
- height: 200px;
- background-size: cover;
- background-position: top center;
- background-repeat: no-repeat;
- border-radius: 50%;
- box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
- opacity: 0.8;
- filter: grayscale(10%);
+    position: fixed;
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    opacity: 0.8;
+    filter: grayscale(10%);
 }
 
-/* Foto 1: Helena de Moana (canto superior esquerdo) */
+/* Fotos individuais */
+
 #photo1 {
- top: 100px;
- left: 80px;
- background-image: url("fotos/foto5.jpeg");
- width: 250px;
- height: 250px;
- opacity: 0.7;
- transform: rotate(-15deg);
+    top: 100px;
+    left: 80px;
+    background-image: url("fotos/foto5.jpeg");
+    width: 250px;
+    height: 250px;
+    opacity: 0.7;
+    transform: rotate(-15deg);
 }
 
-/* Foto 2: Helena na praia de roxo (canto superior direito) */
 #photo2 {
- top: 100px;
- right: 80px;
- background-image: url("fotos/foto2.jpeg");
- width: 250px;
- height: 250px;
- opacity: 0.7;
- transform: rotate(10deg);
+    top: 100px;
+    right: 80px;
+    background-image: url("fotos/foto2.jpeg");
+    width: 250px;
+    height: 250px;
+    opacity: 0.7;
+    transform: rotate(10deg);
 }
 
-/* Foto 3: Helena de listras (canto inferior esquerdo) */
 #photo3 {
- bottom: 80px;
- left: 30px;
- background-image: url("fotos/foto3.jpeg");
- width: 220px;
- height: 220px;
- transform: rotate(5deg);
+    bottom: 80px;
+    left: 30px;
+    background-image: url("fotos/foto3.jpeg");
+    width: 220px;
+    height: 220px;
+    transform: rotate(5deg);
 }
 
-/* Foto 4: Helena de flor no cabelo (canto inferior direito) */
 #photo4 {
- bottom: 50px;
- right: 0px;
- background-image: url("fotos/foto4.jpeg");
- width: 220px;
- height: 220px;
- transform: rotate(-8deg);
+    bottom: 50px;
+    right: 0px;
+    background-image: url("fotos/foto4.jpeg");
+    width: 220px;
+    height: 220px;
+    transform: rotate(-8deg);
 }
 
-/* Opcional: Efeito de animação para as fotos flutuarem */
+/* =========================================================
+   ANIMAÇÃO
+   ========================================================= */
+
 @keyframes float {
- 0% { transform: translate(0, 0px); }
- 50% { transform: translate(0, 15px); }
- 100% { transform: translate(0, -0px); }
+    0% { transform: translateY(0); }
+    50% { transform: translateY(15px); }
+    100% { transform: translateY(0); }
 }
 
-#photo1, #photo3 { animation: float 6s ease-in-out infinite; }
-#photo2, #photo4 { animation: float 8s ease-in-out infinite; }
-
-/* Media query para telas menores (como celular) */
-@media (max-width: 768px) {
- .container {
-  padding: 20px;
-  max-width: 90%;
- }
- h1 {
-  font-size: 2.5em;
- }
- h2 {
-  font-size: 1.5em;
- }
-
- .photo-decoration {
-    display: none; 
+#photo1, #photo3 {
+    animation: float 6s ease-in-out infinite;
 }
- 
+
+#photo2, #photo4 {
+    animation: float 8s ease-in-out infinite;
+}
+
+/* =========================================================
+   SISTEMA MOBILE (PORTRAIT & LANDSCAPE)
+   ========================================================= */
+
+/* 1. REGRAS GERAIS PARA MOBILE (Celulares em geral) */
+@media (max-width: 930px) {
+    body {
+        background-attachment: scroll; /* Melhora performance no celular */
+        padding: 10px;
+    }
+
+    /* Esconde as fotos flutuantes para não cobrirem o texto no mobile */
+    .photo-decoration {
+        display: none !important;
+    }
+}
+
+/* 2. CELULAR EM PÉ (Portrait) */
+@media (max-width: 768px) and (orientation: portrait) {
+    .rotate-notice {
+        display: block;
+        background: var(--color-ocean);
+        color: white;
+        padding: 12px;
+        font-size: 0.9em;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        text-align: center;
+        border-bottom: 2px solid var(--color-sand);
+    }
+
+    .container {
+        max-width: 95%;
+        padding: 20px;
+        margin-top: 10px;
+        background-color: rgba(255, 255, 255, 0.9); /* Fundo sutil para ler melhor */
+    }
+    
+    h1 { font-size: 2.2em; }
+    h2 { font-size: 1.6em; }
+}
+
+/* =========================================================
+   3. CELULAR DEITADO (Landscape - Quadro Único Integrado)
+   ========================================================= */
+@media (max-width: 930px) and (orientation: landscape) {
+    body {
+        display: block; 
+        padding: 0;
+        margin: 0;
+        height: 100vh;
+        overflow-y: auto; /* Permite scroll na página toda */
+        
+        /* Define o fundo principal para a tela toda */
+        background-image: url("fotos/Fundo1.png"); 
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
+
+    .rotate-notice { display: none; }
+
+    /* Esconde a foto flutuante da esquerda para usar apenas o fundo do body */
+    #photo1 {
+        display: none !important;
+    }
+
+    .container {
+        max-width: 85%;
+        margin: 20px auto;
+        padding: 20px;
+        
+        /* AQUI ESTÁ A MUDANÇA: Retiramos o fundo e a caixa branca */
+        background-color: transparent !important; 
+        box-shadow: none !important;
+        border-radius: 0;
+        
+        text-align: center;
+    }
+
+    
+    /* RSVP DENTRO DA CAIXA (Como na sua imagem) */
+    .rsvp-form-container {
+        background-color: #fcfcfc; /* Branco levemente off-white */
+        border: 2px dashed #d94870; /* Borda tracejada rosa */
+        border-radius: 20px; /* Bordas arredondadas */
+        padding: 30px 20px;
+        margin: 40px auto;
+        max-width: 450px; /* Mantém o formulário com tamanho de "caixa" */
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Sombra para destacar */
+    }
+
+    
+
+    /* Ajuste dos labels para ficarem legíveis na caixa branca */
+    .form-group label {
+        color: #555;
+        text-shadow: none;
+    }
 }
